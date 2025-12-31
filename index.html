@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>整えるゴルフ - 思考・感覚・スコアの3点リセット</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        golf: {
+                            green: '#2F5233',
+                            light: '#E8F5E9',
+                            sand: '#F3F0E6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Zen Old Mincho"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fcfcfc;
+            color: #333;
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased leading-relaxed text-gray-800 pb-24">
+
+    <!-- ① ファーストビュー -->
+    <header class="relative h-[85vh] min-h-[600px] flex items-center justify-center text-center px-4 overflow-hidden bg-gray-900 text-white">
+        <!-- 背景画像（イメージ：落ち着いた早朝のゴルフ場） -->
+        <div class="absolute inset-0 z-0">
+            <img src="top1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop'" alt="早朝の静かなゴルフコース" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70"></div>
+        </div>
+        
+        <div class="relative z-20 max-w-2xl mx-auto fade-in" style="animation-delay: 0.2s;">
+            <p class="text-sm md:text-lg tracking-[0.2em] mb-6 opacity-90 font-serif">整えるゴルフ。</p>
+            <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-8 drop-shadow-lg font-serif">
+                ゴルフは、<br>
+                やり直すものではない。<br>
+                <span class="border-b-2 border-white/50 pb-2 inline-block mt-2">整え直すものだ。</span>
+            </h1>
+            <p class="text-base md:text-xl font-medium tracking-wide opacity-90 mt-4">
+                思考・感覚・スコアの<br class="md:hidden">3点リセット
+            </p>
+        </div>
+        
+        <div class="absolute bottom-8 left-0 right-0 z-20 animate-bounce text-center">
+            <i data-lucide="chevron-down" class="w-8 h-8 mx-auto text-white/70"></i>
+        </div>
+    </header>
+
+    <!-- ② 共感パート -->
+    <section class="py-20 px-6 max-w-3xl mx-auto text-center md:text-left">
+        <div class="space-y-8">
+            <h2 class="text-xl md:text-2xl font-serif font-bold text-gray-700 leading-normal text-center mb-8">
+                ある日突然、<br>
+                今まで当たり前にできていたことが<br>
+                分からなくなる瞬間がありませんか？
+            </h2>
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 space-y-5 text-left max-w-lg mx-auto">
+                <div class="flex items-start space-x-4">
+                    <div class="mt-1 bg-gray-100 p-1 rounded-full">
+                        <i data-lucide="check" class="w-4 h-4 text-gray-500"></i>
+                    </div>
+                    <p class="text-gray-700 font-medium">動画を見すぎて、正解がどれか分からない</p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="mt-1 bg-gray-100 p-1 rounded-full">
+                        <i data-lucide="check" class="w-4 h-4 text-gray-500"></i>
+                    </div>
+                    <p class="text-gray-700 font-medium">練習場では打てるのに、コースで崩れる</p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="mt-1 bg-gray-100 p-1 rounded-full">
+                        <i data-lucide="check" class="w-4 h-4 text-gray-500"></i>
+                    </div>
+                    <p class="text-gray-700 font-medium">「もう歳だから」と諦めかけている</p>
+                </div>
+            </div>
+            <p class="text-base text-gray-600 leading-loose text-center mt-10">
+                色々な理論を試しては、また迷う。<br>
+                そんな自分に疲れてしまっているのは、<br>
+                <span class="border-b border-gray-400 pb-1">あなただけではありません。</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- ③ 問題の再定義 -->
+    <section class="py-24 bg-golf-sand px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-serif text-2xl md:text-4xl font-bold text-golf-green mb-10">
+                それは、<br class="md:hidden">技術不足ではありません。
+            </h2>
+            <div class="prose prose-lg mx-auto text-gray-700 space-y-6">
+                <p>
+                    長年ゴルフを続けてきたあなたには、<br>
+                    十分な経験と感覚が備わっています。
+                </p>
+                <p>
+                    今の不調は、下手になったからでも、<br>
+                    練習量が足りないからでもありません。
+                </p>
+                <div class="py-6">
+                    <p class="font-serif text-2xl font-bold text-gray-800">
+                        ただ、「整える場所」が<br>なかっただけです。
+                    </p>
+                </div>
+                <p>
+                    新しいスイングを覚える必要はありません。<br>
+                    絡まった糸をほどくように、<br>
+                    本来の自分に戻ればいいのです。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ④ 解決の全体像 -->
+    <section class="py-20 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-golf-green text-xs font-bold tracking-widest uppercase mb-3 block">Concept</span>
+            <h2 class="font-serif text-3xl font-bold mb-4 text-gray-800">教えるのではなく、整える</h2>
+            <p class="text-gray-600">3つの視点で、あなたのゴルフを静かにリセットします。</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Step 1 -->
+            <div class="text-center p-8 rounded-xl bg-white border border-gray-100 shadow-sm relative overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div class="absolute top-0 left-0 w-full h-1 bg-blue-500"></div>
+                <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600">
+                    <i data-lucide="brain" class="w-8 h-8"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-3 text-gray-800">思考を整える</h3>
+                <p class="text-xs font-bold text-blue-600 mb-3 bg-blue-50 inline-block px-3 py-1 rounded-full">迷った時の応急処置</p>
+                <p class="text-gray-600 text-sm leading-relaxed">余計な情報を遮断し、<br>シンプルに考える。</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="text-center p-8 rounded-xl bg-white border border-gray-100 shadow-sm relative overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div class="absolute top-0 left-0 w-full h-1 bg-golf-green"></div>
+                <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6 text-golf-green">
+                    <i data-lucide="activity" class="w-8 h-8"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-3 text-gray-800">感覚を整える</h3>
+                <p class="text-xs font-bold text-golf-green mb-3 bg-green-50 inline-block px-3 py-1 rounded-full">身体のズレを戻す</p>
+                <p class="text-gray-600 text-sm leading-relaxed">言葉にできない<br>「あの感覚」を取り戻す。</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="text-center p-8 rounded-xl bg-white border border-gray-100 shadow-sm relative overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <div class="absolute top-0 left-0 w-full h-1 bg-orange-500"></div>
+                <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-6 text-orange-600">
+                    <i data-lucide="target" class="w-8 h-8"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold mb-3 text-gray-800">スコアを整える</h3>
+                <p class="text-xs font-bold text-orange-600 mb-3 bg-orange-50 inline-block px-3 py-1 rounded-full">判断を安定させる</p>
+                <p class="text-gray-600 text-sm leading-relaxed">無理なく狙える<br>距離と番手を知る。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑤ 各アプリ紹介 -->
+    <section id="products" class="py-20 bg-gray-50 px-6">
+        <div class="max-w-4xl mx-auto space-y-16">
+            
+            <!-- App A -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row">
+                <!-- Image Area -->
+                <div class="md:w-1/2 bg-white flex items-center justify-center relative">
+                    <img src="aplA.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?q=80&w=2072&auto=format&fit=crop'" alt="アプリA画面イメージ" class="w-full h-auto object-contain">
+                    <!-- Text Overlay -->
+                    <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-6 bg-black/20">
+                        <p class="text-xl md:text-3xl font-bold font-serif text-white drop-shadow-lg mb-3 leading-relaxed">
+                            ゴルフは、<br>
+                            考えすぎなくていい。
+                        </p>
+                        <p class="text-sm md:text-lg font-medium font-serif text-white drop-shadow-lg opacity-90">
+                            今の迷いを静かに整える1分間。
+                        </p>
+                    </div>
+                </div>
+                <!-- Text Area -->
+                <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                    <h4 class="text-lg font-bold text-gray-800 mb-2 border-b pb-2 border-gray-100">思考を整える</h4>
+                    
+                    <!-- App A Title & Subtitle -->
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-blue-600 mb-1">アプリ A</h3>
+                        <p class="text-md font-bold text-gray-700">迷った時の1分コーチ</p>
+                    </div>
+
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                        コースや練習場で突然分からなくなった時、動画を何十分も見る必要はありません。あなたの今の状態に合わせ、たった1分で「これだけやればOK」というシンプルな答えを導き出します。
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-blue-500 flex-shrink-0"></i>今の迷いを即座に断ち切る</li>
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-blue-500 flex-shrink-0"></i>余計な思考を捨てる応急処置</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- App B -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row">
+                <!-- Image Area -->
+                <div class="md:w-1/2 bg-white flex items-center justify-center relative">
+                    <img src="aplB.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1593111774653-d14620f3937c?q=80&w=2070&auto=format&fit=crop'" alt="アプリB画面イメージ" class="w-full h-auto object-contain">
+                    <!-- Text Overlay -->
+                    <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-6 bg-black/30">
+                        <p class="text-xl md:text-3xl font-bold font-serif text-white drop-shadow-lg mb-2 leading-relaxed">
+                            5球で、戻れる。<br>
+                            力まないスイング感覚。
+                        </p>
+                        <p class="text-sm md:text-base font-medium font-serif text-white drop-shadow-lg mt-2 leading-relaxed opacity-90">
+                            縦捻転・落とす・左リードを<br>
+                            もう一度、自分のものに。
+                        </p>
+                    </div>
+                </div>
+                <!-- Text Area -->
+                <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                    <h4 class="text-lg font-bold text-gray-800 mb-2 border-b pb-2 border-gray-100">感覚を整える</h4>
+
+                    <!-- App B Title & Subtitle -->
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-golf-green mb-1">アプリ B</h3>
+                        <p class="text-md font-bold text-gray-700">縦捻転マスター</p>
+                    </div>
+
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                        年齢とともに変化する身体感覚。無理に若者と同じスイングをするのではなく、縦捻転・落とす動き・左リードといった「大人に必要な感覚」を、5球以内のドリルで取り戻します。
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-golf-green flex-shrink-0"></i>力まないスイング感覚の再生</li>
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-golf-green flex-shrink-0"></i>5球打つだけで「これだ」に戻れる</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- App C -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row">
+                <!-- Image Area -->
+                <div class="md:w-1/2 bg-white flex items-center justify-center relative">
+                    <img src="aplC.png" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1592919505780-30395071b483?q=80&w=2070&auto=format&fit=crop'" alt="アプリC画面イメージ" class="w-full h-auto object-contain">
+                    <!-- Text Overlay -->
+                    <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-6 bg-black/30">
+                        <p class="text-xl md:text-3xl font-bold font-serif text-white drop-shadow-lg mb-2 leading-relaxed">
+                            飛ばさなくていい。<br>
+                            スコアは、整えればいい。
+                        </p>
+                        <p class="text-sm md:text-base font-medium font-serif text-white drop-shadow-lg mt-2 leading-relaxed opacity-90">
+                            小さく<br>
+                            リアルな距離で<br>
+                            確実に狙うゴルフへ。
+                        </p>
+                    </div>
+                </div>
+                <!-- Text Area -->
+                <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                    <h4 class="text-lg font-bold text-gray-800 mb-2 border-b pb-2 border-gray-100">スコアを整える</h4>
+
+                    <!-- App C Title & Subtitle -->
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-orange-600 mb-1">アプリ C</h3>
+                        <p class="text-md font-bold text-gray-700">距離感・番手</p>
+                    </div>
+
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                        飛距離の低下は恥ずかしいことではありません。今のあなたの「リアルな飛距離」と「狙える番手」を可視化。無理なマン振りを防ぎ、大人のゲームマネジメントでスコアを安定させます。
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-orange-500 flex-shrink-0"></i>現実的な番手選びでミス激減</li>
+                        <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 mr-3 text-orange-500 flex-shrink-0"></i>コースでの判断迷いをゼロに</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ⑥ 「あなたはどれ？」診断 -->
+    <section class="py-24 px-6 max-w-2xl mx-auto">
+        <h2 class="font-serif text-2xl md:text-3xl font-bold text-center mb-12 text-gray-800">今のあなたは、<br>どの状態ですか？</h2>
+        <div class="space-y-4">
+            <!-- Diagnosis 1 -->
+            <a href="#A" class="block border border-gray-200 rounded-lg p-6 bg-white hover:bg-gray-50 transition shadow-sm group">
+                <div class="flex justify-between items-center mb-2">
+                    <p class="font-bold text-gray-700 text-sm md:text-base">練習場でもコースでも、<br class="md:hidden">何をすればいいか頭が真っ白になる</p>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-gray-300 group-hover:text-blue-500 transition"></i>
+                </div>
+                <div class="flex justify-between items-end mt-2">
+                    <p class="text-xs text-gray-500">情報過多で混乱している方へ</p>
+                    <span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap">アプリ A がおすすめ</span>
+                </div>
+            </a>
+            
+            <!-- Diagnosis 2 -->
+            <a href="#B" class="block border border-gray-200 rounded-lg p-6 bg-white hover:bg-gray-50 transition shadow-sm group">
+                <div class="flex justify-between items-center mb-2">
+                    <p class="font-bold text-gray-700 text-sm md:text-base">以前のような当たりが出ない、<br class="md:hidden">体がスムーズに動かない</p>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-gray-300 group-hover:text-golf-green transition"></i>
+                </div>
+                <div class="flex justify-between items-end mt-2">
+                    <p class="text-xs text-gray-500">スイングの感覚がズレている方へ</p>
+                    <span class="bg-green-100 text-golf-green text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap">アプリ B がおすすめ</span>
+                </div>
+            </a>
+
+            <!-- Diagnosis 3 -->
+            <a href="#C" class="block border border-gray-200 rounded-lg p-6 bg-white hover:bg-gray-50 transition shadow-sm group">
+                <div class="flex justify-between items-center mb-2">
+                    <p class="font-bold text-gray-700 text-sm md:text-base">ショートやオーバーが多く、<br class="md:hidden">スコアがまとまらない</p>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-gray-300 group-hover:text-orange-500 transition"></i>
+                </div>
+                <div class="flex justify-between items-end mt-2">
+                    <p class="text-xs text-gray-500">自分の距離感を整理したい方へ</p>
+                    <span class="bg-orange-100 text-orange-700 text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap">アプリ C がおすすめ</span>
+                </div>
+            </a>
+
+            <!-- Diagnosis 4 -->
+             <a href="#ALL" class="block border-2 border-golf-green bg-green-50/30 rounded-lg p-6 hover:bg-green-50/60 transition shadow-sm group">
+                <div class="flex justify-between items-center mb-2">
+                    <p class="font-bold text-golf-green text-sm md:text-base">全部当てはまる、<br class="md:hidden">もう一度基礎から整えたい</p>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-green-300 group-hover:text-golf-green transition"></i>
+                </div>
+                <div class="flex justify-between items-end mt-2">
+                    <p class="text-xs text-green-700">思考・感覚・スコアをトータルでリセット</p>
+                    <span class="bg-golf-green text-white text-[10px] font-bold px-3 py-1 rounded-full whitespace-nowrap">3本セット がおすすめ</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ⑦ 価格と選び方 -->
+    <section class="py-24 bg-golf-sand px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="font-serif text-2xl font-bold text-center mb-12 text-gray-800">あなたに必要なものだけを。</h2>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Plan A -->
+                <div class="bg-white p-6 rounded-lg text-center border-t-4 border-blue-500 shadow-sm flex flex-col">
+                    <h3 class="font-bold text-gray-700 mb-4">思考整理</h3>
+                    <div class="mb-4">
+                        <p class="text-3xl font-bold text-blue-600">¥500<span class="text-xs font-normal text-gray-500">/月</span></p>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-6 bg-gray-50 py-2 rounded">アプリ A<br>迷った時の1分コーチ</p>
+                    <button class="mt-auto w-full py-3 border border-blue-500 text-blue-600 font-bold rounded hover:bg-blue-50 transition text-sm">これを選ぶ</button>
+                </div>
+
+                <!-- Plan B -->
+                <div class="bg-white p-6 rounded-lg text-center border-t-4 border-golf-green shadow-sm flex flex-col">
+                    <h3 class="font-bold text-gray-700 mb-4">感覚再生</h3>
+                    <div class="mb-4">
+                        <p class="text-3xl font-bold text-golf-green">¥1,200<span class="text-xs font-normal text-gray-500">/月</span></p>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-6 bg-gray-50 py-2 rounded">アプリ B<br>縦捻転マスター</p>
+                    <button class="mt-auto w-full py-3 border border-golf-green text-golf-green font-bold rounded hover:bg-green-50 transition text-sm">これを選ぶ</button>
+                </div>
+
+                <!-- Plan C -->
+                <div class="bg-white p-6 rounded-lg text-center border-t-4 border-orange-500 shadow-sm flex flex-col">
+                    <h3 class="font-bold text-gray-700 mb-4">スコア管理</h3>
+                    <div class="mb-4">
+                        <p class="text-3xl font-bold text-orange-600">¥1,500<span class="text-xs font-normal text-gray-500">/月</span></p>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-6 bg-gray-50 py-2 rounded">アプリ C<br>距離感・番手</p>
+                    <button class="mt-auto w-full py-3 border border-orange-500 text-orange-600 font-bold rounded hover:bg-orange-50 transition text-sm">これを選ぶ</button>
+                </div>
+
+                <!-- All Set -->
+                <div class="bg-golf-green text-white p-6 rounded-lg text-center shadow-xl transform md:-translate-y-4 flex flex-col relative border border-golf-green">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-black text-[10px] font-bold px-4 py-1 rounded-full shadow tracking-wider">一番選ばれています</div>
+                    <h3 class="font-bold text-white mb-4 mt-2">トータルリセット</h3>
+                    <div class="mb-4">
+                        <p class="text-4xl font-bold text-yellow-400">¥2,500<span class="text-xs font-normal text-white/70">/月</span></p>
+                    </div>
+                    <p class="text-xs text-white/80 mb-6 bg-white/10 py-2 rounded">A + B + C<br>3つ全て使い放題</p>
+                    <button class="mt-auto w-full py-3 bg-white text-golf-green font-bold rounded hover:bg-gray-100 transition shadow-md">まとめて整える</button>
+                </div>
+            </div>
+            <p class="text-center text-xs text-gray-500 mt-8">※いつでも解約可能です。無理な引き止めは一切いたしません。</p>
+        </div>
+    </section>
+
+    <!-- ⑧ 他との違い & ⑨ 使い方の簡単さ -->
+    <section class="py-24 px-6 max-w-4xl mx-auto">
+        <div class="mb-16">
+            <h2 class="font-serif text-2xl font-bold mb-10 text-center text-gray-800">なぜ、このアプリなのか</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="flex gap-5">
+                    <div class="bg-gray-100 p-3 rounded-lg h-fit text-gray-600 flex-shrink-0">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-3 text-lg">正解を押し付けません</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">「こう打て」という強制はしません。あなたの持っている長年の感覚を引き出し、整えることだけに集中します。</p>
+                    </div>
+                </div>
+                <div class="flex gap-5">
+                    <div class="bg-gray-100 p-3 rounded-lg h-fit text-gray-600 flex-shrink-0">
+                        <i data-lucide="smartphone" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-3 text-lg">操作に迷いません</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">選ぶ → 読む → 実行するだけ。練習場でもコースでも、スマホ片手に片手間で確認できます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ⑩ クロージング -->
+        <div class="text-center border-t border-gray-100 pt-20">
+            <p class="text-lg md:text-2xl font-serif text-gray-700 mb-8 leading-relaxed">
+                ゴルフを楽しむ時間は、<br>
+                まだまだこれから長く続きます。
+            </p>
+            <p class="text-gray-600 mb-10 leading-loose text-sm md:text-base">
+                迷いの中にいる時間はもったいない。<br>
+                一度立ち止まり、呼吸を整えるように、<br>
+                あなたのゴルフを整え直してみませんか？
+            </p>
+            <p class="font-bold text-golf-green text-lg md:text-xl">
+                大丈夫。あなたは必ず戻れます。
+            </p>
+        </div>
+    </section>
+
+    <!-- ⑪ CTA -->
+    <section class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-gray-200 py-4 px-6 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50">
+        <div class="max-w-md mx-auto flex flex-col items-center">
+            <button class="w-full bg-golf-green text-white font-bold py-4 rounded-lg shadow-lg hover:bg-[#254228] transition transform active:scale-95 flex items-center justify-center gap-3 text-lg">
+                <span>無料で1週間試してみる</span>
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+            <p class="text-[10px] text-gray-500 mt-2">まずは「整う感覚」を体験してください</p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white pt-16 pb-32 md:pb-16 text-center text-xs text-gray-400">
+        <div class="max-w-4xl mx-auto px-6 mb-8 flex flex-col md:flex-row justify-center gap-6">
+            <a href="#" class="hover:text-white transition">利用規約</a>
+            <a href="#" class="hover:text-white transition">プライバシーポリシー</a>
+            <a href="#" class="hover:text-white transition">運営会社</a>
+            <a href="#" class="hover:text-white transition">お問い合わせ</a>
+        </div>
+        <p class="mb-2 tracking-widest uppercase text-[10px]">Golf Adjust App Series</p>
+        <p>&copy; 2024 Golf Adjust Inc. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
